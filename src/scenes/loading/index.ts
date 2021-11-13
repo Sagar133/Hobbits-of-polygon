@@ -14,6 +14,7 @@ export class LoadingScene extends Scene {
     // PLAYER LOADING
     this.load.image('king', 'sprites/king.png');
     this.load.image('wallpaper', 'tilemaps/tiles/gimli.jpg');
+    this.load.image('start', 'tilemaps/tiles/start.png');
 
     this.load.atlas('a-king', 'spritesheets/a-king.png', 'spritesheets/a-king_atlas.json');
 
@@ -35,7 +36,12 @@ export class LoadingScene extends Scene {
     let mainPic = this.add.image(0, 0, "wallpaper");
     let self = this;
 
-    button = this.physics.add.image(100, 400, 'king')
+    this.add
+      .text(this.sys.game.canvas.width / 9, 50, "Connect Metamask and help mighty king to reclaim his homeland!!", {
+        font: "30px Courier"
+      })
+
+    button = this.physics.add.image(710, 640, 'start')
     .setInteractive()
 
     Phaser.Display.Align.In.Center(
