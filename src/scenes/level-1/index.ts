@@ -41,7 +41,7 @@ export class Level1 extends Scene {
     this.wallsLayer.setCollisionByProperty({ collides: true });
 
     this.physics.world.setBounds(0, 0, this.wallsLayer.width, this.wallsLayer.height);
-    this.showDebugWalls();
+    //this.showDebugWalls();
   }
 
   private initChests(): void {

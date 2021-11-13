@@ -7,7 +7,7 @@ type GameConfigExtended = Types.Core.GameConfig & {
 };
 
 export const gameConfig: GameConfigExtended = {
-  title: 'Phaser game tutorial',
+  title: 'Collectable Quest',
   type: WEBGL,
   parent: 'game',
   backgroundColor: '#351f1b',

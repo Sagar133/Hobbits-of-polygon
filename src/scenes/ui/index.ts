@@ -20,6 +20,7 @@ export class UIScene extends Scene {
 
       if (this.score.getValue() === gameConfig.winScore) {
         this.game.events.emit(EVENTS_NAME.gameEnd, 'win');
+        alert('put here the web3')
       }
     };
 
