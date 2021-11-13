@@ -15,6 +15,7 @@ export class LoadingScene extends Scene {
     this.load.image('king', 'sprites/king.png');
     this.load.image('wallpaper', 'tilemaps/tiles/gimli.jpg');
     this.load.image('start', 'tilemaps/tiles/start.png');
+    this.load.image('faucet', 'tilemaps/tiles/faucet.png');
 
     this.load.atlas('a-king', 'spritesheets/a-king.png', 'spritesheets/a-king_atlas.json');
 
@@ -40,6 +41,9 @@ export class LoadingScene extends Scene {
       .text(this.sys.game.canvas.width / 9, 50, "Connect Metamask and help mighty king to reclaim his homeland!!", {
         font: "30px Courier"
       })
+    
+    button = this.physics.add.image(710, 490, 'faucet')
+    .setInteractive()
 
     button = this.physics.add.image(710, 640, 'start')
     .setInteractive()
