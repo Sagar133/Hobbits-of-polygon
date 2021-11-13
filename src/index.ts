@@ -37,7 +37,7 @@ export const gameConfig: GameConfigExtended = {
     disableWebAudio: false,
   },
   scene: [LoadingScene, Level1, UIScene],
-  winScore: 60,
+  winScore: 100,
 };
 
 window.sizeChanged = () => {
