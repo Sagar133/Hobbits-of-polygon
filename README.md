@@ -1,28 +1,12 @@
-# Webpack + Phaser3 + Typescript Tutorial
-
-This is full codebase from [this](https://www.notion.so/daniellotos/Phaser-js-f70de1dfae1944fe8a0452ac865b90f8) tutorial.
-
-We create your first web game from zero together!
-
-## Languages
-Sorry, only RU for now 😔
-
-Localozations | Status | Link
---- | --- | ---
-RU | ✅ | [Link](https://www.notion.so/daniellotos/Phaser-js-f70de1dfae1944fe8a0452ac865b90f8)
-EN | in progress ✍️ | Nope
-
-
-## Start dev-server
-
-```
-yarn dev
-```
-
-## Build
-
-```
-yarn build
-```
-
-from [Shakuro](https://shakuro.com) and [Denis Kratos](mailto:daniellotoskratos@gmail.com) with ❤️
+<h1 align="center">Collectable Quest</h1>
+# An awesome RPG adventure game running on Okex Blockchain!<br><br>
+# Collectable Quest is an RPG adventure game built with phaser 3.
+# Dungeon Crawler interacts with Okex Testnet with help of Metamask.
+# First RPG game that interacts with blockchain networks<br><br>
+<h2> Basic Workflow </h2>
+* Users connect their Metamask wallet with the game.
+* Users have an HP of 100 which can be seen on the top left with the text.
+* There are lots of monsters, traps in the game which are to be avoided, users have a weapon as well (using the spacebar key will swing the hammer).
+* Enemies can be killed with a hammer and chest be collected in the game. 
+* On successfully clearing the game a user is rewarded with Gold ERC20 token with the doubled amount.
+<br><br>
