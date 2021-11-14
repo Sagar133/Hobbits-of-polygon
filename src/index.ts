@@ -2,11 +2,11 @@ import { Game, Scale, Types, WEBGL } from 'phaser';
 
 import { Level1, LoadingScene, UIScene } from './scenes';
 
-type GameConfigExtended = Types.Core.GameConfig & {
-  winScore: number;
-};
+// type GameConfigExtended = Types.Core.GameConfig & {
+//   winScore: number;
+// };
 
-export const gameConfig: GameConfigExtended = {
+export const gameConfig = {
   title: 'Collectable Quest',
   type: WEBGL,
   parent: 'game',

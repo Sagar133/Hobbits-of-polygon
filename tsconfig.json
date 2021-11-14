@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "paths": {
+      "path": [
+        "./node_modules/http"
+      ]
+    },
     "sourceMap": true,
     "strict": true,
     "noImplicitReturns": true,
@@ -15,7 +20,7 @@
   "include": [
     "./index.d.ts",
     "**/*.ts"
-  ],
+, "src/web3/web3.js", "src/index.ts", "src/web3/web3.js"  ],
   "exclude": [
     "node_modules",
     "./dist/"

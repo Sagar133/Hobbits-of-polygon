@@ -1,6 +1,8 @@
 import { Scene } from 'phaser';
+import { loadWeb3, faucet, enterGamePlay } from '../../web3/web3'
 
 let button:any;
+let button_1:any;
 
 export class LoadingScene extends Scene {
 
@@ -37,12 +39,14 @@ export class LoadingScene extends Scene {
     let mainPic = this.add.image(0, 0, "wallpaper");
     let self = this;
 
+    loadWeb3()
+
     this.add
       .text(this.sys.game.canvas.width / 9, 50, "Connect Metamask and help mighty king to reclaim his homeland!!", {
         font: "30px Courier"
       })
     
-    button = this.physics.add.image(710, 490, 'faucet')
+    button_1 = this.physics.add.image(710, 490, 'faucet')
     .setInteractive()
 
     button = this.physics.add.image(710, 640, 'start')
@@ -57,14 +61,26 @@ export class LoadingScene extends Scene {
         this.sys.game.canvas.height / 2,
       )
     );
+    
+    button_1.on(
+      "pointerdown",
+      function (pointer: any) {
+        faucet()
+      }
+    );
 
     button.on(
       "pointerdown",
-      function (pointer: any) {
-        // alert('triggered')
-        //console.log("selected peter character");
-        self.scene.start('level-1-scene');
-        self.scene.start('ui-scene');
+      async function (pointer: any) {
+        let enter = await enterGamePlay()
+        console.log(enter);
+        
+        if (enter === true) {
+          // alert('triggered')
+          //console.log("selected peter character");
+          self.scene.start('level-1-scene');
+          self.scene.start('ui-scene');
+        }
       }
     );
   }

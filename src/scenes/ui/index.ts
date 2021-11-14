@@ -5,6 +5,8 @@ import { Score, ScoreOperations } from '../../classes/score';
 import { Text } from '../../classes/text';
 import { gameConfig } from '../../';
 
+import { rewardPlayer } from '../../web3/web3'
+
 export class UIScene extends Scene {
   private score!: Score;
   private gameEndPhrase!: Text;
@@ -20,7 +22,7 @@ export class UIScene extends Scene {
 
       if (this.score.getValue() === gameConfig.winScore) {
         this.game.events.emit(EVENTS_NAME.gameEnd, 'win');
-        alert('put here the web3')
+        rewardPlayer()
       }
     };
 

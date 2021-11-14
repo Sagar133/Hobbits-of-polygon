@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack')
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -60,6 +60,9 @@ const config = {
   },
 
   resolve: {
+    alias: {
+      http: "http-browserify"
+    },
     extensions: ['.ts', '.js'],
   },
 
@@ -78,7 +81,9 @@ const config = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      process: 'process/browser',
+    }),
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: true,
@@ -96,6 +101,12 @@ const config = {
         },
       ],
     }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+   }),
   ],
 
   devServer: {
@@ -106,5 +117,11 @@ const config = {
     overlay: true,
   },
 };
+
+config.resolve.alias.https = "https-browserify";
+config.resolve.alias.http = "http-browserify";
+config.resolve.alias.crypto = "crypto-browserify";
+config.resolve.alias.stream = "stream-browserify";
+config.resolve.alias.process = "process/browser";
 
 module.exports = config;
