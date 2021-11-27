@@ -6,7 +6,7 @@ import { gameObjectsToObjectPoints } from '../../helpers/gameobject-to-object-po
 
 import { EVENTS_NAME } from '../../consts';
 
-export class Level1 extends Scene {
+export class LevelIce extends Scene {
   private player!: Player;
   private map!: Tilemaps.Tilemap;
   private tileset!: Tilemaps.Tileset;
@@ -18,12 +18,12 @@ export class Level1 extends Scene {
   private enemies!: Enemy[];
 
   constructor() {
-    super('level-1-scene');
+    super('level-ice-scene');
   }
 
   create(): void {
     this.initMap();
-    this.player = new Player(this, 100, 100);
+    this.player = new Player(this, 200, 100);
     this.initChests();
     this.initEnemies();
     this.initCamera();
@@ -36,9 +36,20 @@ export class Level1 extends Scene {
   }
 
   private initMap(): void {
-    this.map = this.make.tilemap({ key: 'dungeon', tileWidth: 16, tileHeight: 16 });
-    this.tileset = this.map.addTilesetImage('dungeon', 'tilesDungeon');
+    // this.map = this.make.tilemap({ key: 'dungeon', tileWidth: 16, tileHeight: 16 });
+    // this.tileset = this.map.addTilesetImage('dungeon', 'tiles');
+    // this.groundLayer = this.map.createLayer('Ground', this.tileset, 0, 0);
+
+    // this.map = this.make.tilemap({ key: 'forest', tileWidth: 16, tileHeight: 16 });
+    // this.tileset = this.map.addTilesetImage('forestTile', 'tiles');
+    // this.groundLayer = this.map.createLayer('ground', this.tileset, 0, 0);
+    // this.treesLayer = this.map.createLayer('trees', this.tileset, 0, 0);
+
+    this.map = this.make.tilemap({ key: 'ice', tileWidth: 16, tileHeight: 16 });
+    this.tileset = this.map.addTilesetImage('iceTile', 'tilesIce');
     this.groundLayer = this.map.createLayer('Ground', this.tileset, 0, 0);
+    // this.treesLayer = this.map.createLayer('Walls', this.tileset, 0, 0);
+
 
     this.wallsLayer = this.map.createLayer('Walls', this.tileset, 0, 0);
     this.wallsLayer.setCollisionByProperty({ collides: true });
