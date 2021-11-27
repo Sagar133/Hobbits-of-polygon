@@ -17,6 +17,17 @@ module.exports = {
       timeoutBlocks: 200,
       skipDryRun: true
     },
+    mumbaiMatic: {
+      provider: function () {
+        return new HDWalletProvider(
+          process.env.PRIVATE_KEY,
+          'https://matic-mumbai.chainstacklabs.com'
+        )
+      },
+      networkCheckTimeout: 100000,
+      network_id: 80001,
+      skipDryRun: true
+    }
   },
 
   // Set default mocha options here, use special reporters etc.

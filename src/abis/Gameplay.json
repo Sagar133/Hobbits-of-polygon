@@ -23,7 +23,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -36,14 +37,16 @@
       "name": "entryTicket",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
       "name": "rewardWinnder",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"_address\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"entryTicket\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardWinnder\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tokenAddress\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/gameplay.sol\":\"Gameplay\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x027b891937d20ccf213fdb9c31531574256de774bda99d3a70ecef6e1913ed2a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://087318b21c528119f649899f5b5580566dd8d7b0303d4904bd0e8580c3545f14\",\"dweb:/ipfs/Qmbn5Mj7aUn8hJuQ8VrQjjEXRsXyJKykgnjR9p4C3nfLtL\"]},\"project:/src/contracts/gameplay.sol\":{\"keccak256\":\"0x9bb17540895677d4eb0b3055f88076ffb6a1aeaaa0c05fa0d03924e36f1948e6\",\"urls\":[\"bzz-raw://fe21293bcaf77617c57127d07b96e29ed5084d83ca2927afe87607d6f85574dd\",\"dweb:/ipfs/QmXHeu9rwad8aG1V1cVJm2MMd9nN6wugyyEMbeofEUx3se\"]}},\"version\":1}",
@@ -4326,10 +4329,17 @@
       "links": {},
       "address": "0xEF23D453b9453A67B3B777aDCca27C12AC5530BF",
       "transactionHash": "0xa1023b30c0ab73eda7048ee6a9d8992532992e2fc9ff63e0ca50080f773c039e"
+    },
+    "80001": {
+      "events": {},
+      "links": {},
+      "address": "0xea70E39da81022ffccA8137F2Ed6e39Cf5fD1eCf",
+      "transactionHash": "0xd6762c13da598d93836f872b0b658179ad247a06c328df779f71bae8505f3395"
     }
   },
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-11-14T09:35:53.623Z",
+  "updatedAt": "2021-11-27T22:14:27.342Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

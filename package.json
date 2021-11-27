@@ -12,7 +12,7 @@
     "fs": false
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.3.3",
+    "@openzeppelin/contracts": "^4.4.0",
     "@truffle/hdwallet-provider": "^1.6.0",
     "assert": "^2.0.0",
     "compression": "^1.7.4",
