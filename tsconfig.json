@@ -20,7 +20,7 @@
   "include": [
     "./index.d.ts",
     "**/*.ts"
-, "src/web3/web3.js", "src/index.ts", "src/web3/web3.js"  ],
+, "src/web3/web3.js", "src/index.ts", "src/web3/web3.js", "server.js"  ],
   "exclude": [
     "node_modules",
     "./dist/"

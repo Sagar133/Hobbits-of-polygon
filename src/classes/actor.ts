@@ -1,6 +1,10 @@
 import { Physics } from 'phaser';
+import { LoadingScene } from '../scenes/loading/index'
 
 export class Actor extends Physics.Arcade.Sprite {
+  protected sceneClass:any;
+  protected attributes:any;
+
   protected hp = 100;
   protected speed = 150;
 
@@ -11,7 +15,14 @@ export class Actor extends Physics.Arcade.Sprite {
     scene.physics.add.existing(this);
 
     this.getBody().setCollideWorldBounds(true);
+    
+    this.sceneClass = new LoadingScene()
+    this.attributes = this.sceneClass.playerAttributes()
+    console.log('attributes', this.attributes) 
+
+    this.hp = this.attributes.hp;
   }
+
 
   public getDamage(value?: number): void {
     this.scene.tweens.add({

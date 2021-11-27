@@ -1,10 +1,14 @@
 import { Scene } from 'phaser';
 import { loadWeb3, faucet, enterGamePlay } from '../../web3/web3'
+import { Attributes } from '../../web3/attributes'
 
 let button:any;
 let button_1:any;
 
 export class LoadingScene extends Scene {
+  public hp:any;
+  public speed:any;
+  public damage:any;
 
   constructor() {
     super('loading-scene');
@@ -72,16 +76,33 @@ export class LoadingScene extends Scene {
     button.on(
       "pointerdown",
       async function (pointer: any) {
-        let enter = await enterGamePlay()
-        console.log(enter);
+        // let enter = await enterGamePlay()
+        // console.log(enter);
         
-        if (enter === true) {
+        //if (enter === true) {
           // alert('triggered')
           //console.log("selected peter character");
+          
+          
+          
           self.scene.start('level-1-scene');
           self.scene.start('ui-scene');
-        }
+        //}
       }
     );
+  }
+
+  playerAttributes(){
+    let setAttributes = new Attributes(110, 40, 1)
+    
+    this.hp = setAttributes.getHp()
+    this.damage = setAttributes.getDamage()
+    this.speed = setAttributes.getSpeed()
+
+    return {
+      hp: this.hp,
+      damage: this.damage,
+      speed: this.speed
+    }
   }
 }

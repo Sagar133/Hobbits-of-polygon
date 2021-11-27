@@ -115,7 +115,7 @@ const config = {
     inline: true,
     hot: true,
     overlay: true,
-  },
+  }
 };
 
 config.resolve.alias.https = "https-browserify";

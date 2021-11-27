@@ -79,6 +79,7 @@ export class Level1 extends Scene {
       this.player,
       this.enemies,
       (obj1, obj2) => {
+        // Web3Damage; here we can change the damage of user
         (obj1 as Player).getDamage(1);
       },
       undefined,
