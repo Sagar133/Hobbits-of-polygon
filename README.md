@@ -12,6 +12,10 @@
 <img src="https://i.imgur.com/nwcDOgy.png" width="500" height="400" />
 <img src ='https://i.imgur.com/lTV8E2S.png' width="500" height='400' />
 <img src="https://i.imgur.com/vHTbh4C.png" width="500" height="400" />
+<img src = "https://i.ibb.co/4jrRrV1/for1.png" width = "500" height = "400" />
+<img src = "https://i.ibb.co/tKX5fWC/Screenshot-29.png" width = "500" height = "400" />
+<img src = "https://i.ibb.co/NVYDm0J/Screenshot-26.png" width = "500" height = "400" />
+
 
 # Phaser 3 Webpack Project Template
 
