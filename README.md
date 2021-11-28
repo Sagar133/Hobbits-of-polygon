@@ -9,12 +9,12 @@
 * https://youtu.be/0bneh4zV1cA
 
 <h1>Glimpse of the Game</h1>
-<img src="https://i.imgur.com/nwcDOgy.png" width="500" height="400" />
-<img src ='https://i.imgur.com/lTV8E2S.png' width="500" height='400' />
-<img src="https://i.imgur.com/vHTbh4C.png" width="500" height="400" />
-<img src = "https://i.ibb.co/4jrRrV1/for1.png" width = "500" height = "400" />
-<img src = "https://i.ibb.co/tKX5fWC/Screenshot-29.png" width = "500" height = "400" />
-<img src = "https://i.ibb.co/NVYDm0J/Screenshot-26.png" width = "500" height = "400" />
+<img src="https://i.imgur.com/nwcDOgy.png" width="900" height="400" />
+<img src ='https://i.imgur.com/lTV8E2S.png' width="900" height='400' />
+<img src="https://i.imgur.com/vHTbh4C.png" width="900" height="400" />
+<img src = "https://i.ibb.co/4jrRrV1/for1.png" width = "900" height = "400" />
+<img src = "https://i.ibb.co/tKX5fWC/Screenshot-29.png" width = "900" height = "400" />
+<img src = "https://i.ibb.co/NVYDm0J/Screenshot-26.png" width = "900" height = "400" />
 
 
 # Phaser 3 Webpack Project Template
