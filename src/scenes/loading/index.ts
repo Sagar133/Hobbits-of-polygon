@@ -1,9 +1,11 @@
 import { Scene } from "phaser";
 import { loadWeb3, faucet, enterGamePlay, getAlgoRandomness } from "../../web3/web3";
 import { Attributes } from "../../web3/attributes";
+import { ethers } from "ethers";
 
 let button: any;
 let button_1: any;
+let vrfRandomness: any;
 
 export class LoadingScene extends Scene {
   public hp: any;
@@ -87,43 +89,39 @@ export class LoadingScene extends Scene {
 
     button.on("pointerdown", async function (pointer: any) {
       let enter = await enterGamePlay()
-      console.log(enter);
+      // console.log(enter);
 
       if (enter === true) {
-      alert('triggered')
-      console.log("selected peter character");
+        // alert('triggered')
+        //console.log("selected peter character");
+        let meta:any = await getAlgoRandomness()
+        let num = ethers.utils.formatEther( meta )
+        vrfRandomness = meta
+        let mapNum = Math.floor(Math.random() * 3);
+        console.log("map", mapNum);
 
-      let meta:any = await getAlgoRandomness()
-      console.log('meta', meta);
-
-      const len = Math.ceil(Math.log10(meta + 1));
-      const rounded = meta % len //Math.ceil(Math.round(num / len))
-      let stripped = rounded % Math.random() * 10 + 10
-      let speedfunc = parseInt(meta)
-
-      console.log('speedfunc', speedfunc);
-      
-      let mapNum = Math.floor(Math.random() * 3);
-      console.log("map", mapNum);
-
-      if (mapNum === 0) {
-        self.scene.start("level-ice-scene");
-        self.scene.start("ui-scene");
-      } else if (mapNum === 1) {
-        self.scene.start("level-ice-scene");
-        self.scene.start("ui-scene");
-      } else {
-        self.scene.start("level-forest-scene");
-        self.scene.start("ui-scene");
-      }
-
+        if (mapNum === 0) {
+          self.scene.start("level-1-scene");
+          self.scene.start("ui-scene");
+        } else if (mapNum === 1) {
+          self.scene.start("level-ice-scene");
+          self.scene.start("ui-scene");
+        } else {
+          self.scene.start("level-forest-scene");
+          self.scene.start("ui-scene");
+        }
       }
     });
   }
 
-  playerAttributes() {
-    let setAttributes = new Attributes(110, 40, 1);
+  public playerAttributes() {
+    // console.log('vrfRandomness: 120', vrfRandomness);
+    let hp = Math.round(this.setHp(vrfRandomness))
+    let speed = Math.round(this.setSpeed(vrfRandomness))
+    let damage = Math.round(this.setDamge(vrfRandomness))
 
+    let setAttributes = new Attributes(hp, speed, damage);
+    
     this.hp = setAttributes.getHp();
     this.damage = setAttributes.getDamage();
     this.speed = setAttributes.getSpeed();
@@ -133,5 +131,35 @@ export class LoadingScene extends Scene {
       damage: this.damage,
       speed: this.speed,
     };
+  }
+
+  setSpeed(val:any) {
+    const len = Math.ceil(Math.log10(val + 1));
+    const rounded = val % len //Math.ceil(Math.round(num / len))
+    let stripped = rounded % Math.random() * 100 + 80
+    let speedfunc = Number(stripped)
+
+    //console.log('speedfunc', speedfunc);
+    return speedfunc
+  }
+
+  setHp(val:any) {
+    const len = Math.ceil(Math.log10(val + 1));
+    const rounded = val % len //Math.ceil(Math.round(num / len))
+    let stripped = rounded % Math.random() * 100 + 100
+    let hpFunc = Number(stripped)
+
+    //console.log('hpFunc', hpFunc);
+    return hpFunc
+  }
+
+  setDamge(val:any) {
+    const len = Math.ceil(Math.log10(val + 1));
+    const rounded = val % len //Math.ceil(Math.round(num / len))
+    let stripped = rounded % Math.random() * 5 + 1
+    let damageFunc = Number(stripped)
+
+    //console.log('damageFunc', damageFunc);
+    return damageFunc
   }
 }

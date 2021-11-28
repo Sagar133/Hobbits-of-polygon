@@ -5,6 +5,7 @@ export class Actor extends Physics.Arcade.Sprite {
   protected sceneClass:any;
   protected attributes:any;
 
+  // fallsafe attributes
   protected hp = 100;
   protected speed = 150;
 
@@ -21,6 +22,7 @@ export class Actor extends Physics.Arcade.Sprite {
     //console.log('attributes', this.attributes) 
 
     this.hp = this.attributes.hp;
+    this.speed = this.attributes.speed
   }
 
 
