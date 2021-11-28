@@ -18,7 +18,7 @@ export class Actor extends Physics.Arcade.Sprite {
     
     this.sceneClass = new LoadingScene()
     this.attributes = this.sceneClass.playerAttributes()
-    console.log('attributes', this.attributes) 
+    //console.log('attributes', this.attributes) 
 
     this.hp = this.attributes.hp;
   }

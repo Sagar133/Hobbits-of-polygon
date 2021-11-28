@@ -1,6 +1,8 @@
 import { Game, Scale, Types, WEBGL } from 'phaser';
 
 import { Level1, LoadingScene, UIScene } from './scenes';
+import { LevelForest } from './scenes/level-1/forestMap';
+import { LevelIce } from './scenes/level-1/iceMap';
 
 // type GameConfigExtended = Types.Core.GameConfig & {
 //   winScore: number;
@@ -36,7 +38,7 @@ export const gameConfig = {
   audio: {
     disableWebAudio: false,
   },
-  scene: [LoadingScene, Level1, UIScene],
+  scene: [LoadingScene, Level1, UIScene, LevelForest, LevelIce],
   winScore: 100,
 };
 
