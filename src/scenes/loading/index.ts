@@ -86,12 +86,12 @@ export class LoadingScene extends Scene {
     });
 
     button.on("pointerdown", async function (pointer: any) {
-      // let enter = await enterGamePlay()
-      // console.log(enter);
+      let enter = await enterGamePlay()
+      console.log(enter);
 
-      //if (enter === true) {
-      // alert('triggered')
-      //console.log("selected peter character");
+      if (enter === true) {
+      alert('triggered')
+      console.log("selected peter character");
 
       let meta:any = await getAlgoRandomness()
       console.log('meta', meta);
@@ -107,7 +107,7 @@ export class LoadingScene extends Scene {
       console.log("map", mapNum);
 
       if (mapNum === 0) {
-        self.scene.start("level-1-scene");
+        self.scene.start("level-ice-scene");
         self.scene.start("ui-scene");
       } else if (mapNum === 1) {
         self.scene.start("level-ice-scene");
@@ -117,7 +117,7 @@ export class LoadingScene extends Scene {
         self.scene.start("ui-scene");
       }
 
-      //}
+      }
     });
   }
 

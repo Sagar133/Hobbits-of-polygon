@@ -12,7 +12,7 @@ export const gameConfig = {
   title: 'Collectable Quest',
   type: WEBGL,
   parent: 'game',
-  backgroundColor: '#351f1b',
+  backgroundColor: '#000000',
   scale: {
     mode: Scale.ScaleModes.NONE,
     width: window.innerWidth,
