@@ -76,7 +76,9 @@ const getAlgoRandomness = async () => {
     console.log('algoNumb', algoNumb);
 
     if (algoNumb) {
-        return await gamealgoWithSigner.getGameAlgo()
+        let numb = await gamealgoWithSigner.getGameAlgo()
+        console.log('numb', numb);
+        return numb
     } else {
         return false
     }
