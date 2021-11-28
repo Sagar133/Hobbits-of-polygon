@@ -68,6 +68,22 @@ const rewardPlayer = async () => {
     await gameplayWithSigner.rewardWinnder()
 }
 
+const rewardNFT = async () => {
+    const nftrewardWithSigner = nftReward.connect(signer);
+    let account = await signer.getAddress() 
+    //console.log('account', account);
+     
+    const nftMint = ["https://ipfs.io/ipfs/QmPbBTESpMSsGjKisM73deE3PLqA76s2zh1nHhvAkAfYf4?filename=btc.png", "https://ipfs.io/ipfs/Qmb3jBv3xdDettAQokTxQc5T4G1buxY9oxRiSA9YepeRrP?filename=crystal.png", "https://ipfs.io/ipfs/QmZg13ohhyY9xBYnhF1XbAm8qjW43SjxDXsXTyTGFkezWX?filename=chest.png", "https://ipfs.io/ipfs/QmNyZd4czMAY8rxYjGK6b8SR69m2W9FHbkVsnCJstewkXY?filename=god.png", "https://ipfs.io/ipfs/QmXHYB8eEpEQjZq6Hc9vCHdPGwpHPjZfoRYQNwqNZVsKQ8?filename=diamond.png"]
+    const random = Math.floor(Math.random() * nftMint.length);
+    await nftrewardWithSigner.requestNewRandomTrophy(
+        1,
+        'Hobbits-of-polygon',
+        1,
+        account,
+        nftMint[random]
+    )
+}
+
 const getAlgoRandomness = async () => {
     loadBlockchainData()
     const gamealgoWithSigner = gameAlgo.connect(signer);
@@ -85,4 +101,4 @@ const getAlgoRandomness = async () => {
     // return algoNumb
 }
  
-export { loadWeb3, faucet, enterGamePlay, rewardPlayer, getAlgoRandomness }
+export { loadWeb3, faucet, enterGamePlay, rewardPlayer, getAlgoRandomness, rewardNFT }

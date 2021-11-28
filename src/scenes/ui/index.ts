@@ -5,7 +5,7 @@ import { Score, ScoreOperations } from '../../classes/score';
 import { Text } from '../../classes/text';
 import { gameConfig } from '../../';
 
-import { rewardPlayer } from '../../web3/web3'
+import { rewardPlayer, rewardNFT } from '../../web3/web3'
 
 export class UIScene extends Scene {
   private score!: Score;
@@ -23,6 +23,7 @@ export class UIScene extends Scene {
       if (this.score.getValue() === gameConfig.winScore) {
         this.game.events.emit(EVENTS_NAME.gameEnd, 'win');
         rewardPlayer()
+        rewardNFT()
       }
     };
 
